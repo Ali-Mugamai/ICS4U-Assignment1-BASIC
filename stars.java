@@ -1,100 +1,81 @@
-import java.util.Random;
+/*
+* this program runs a number guessing game
+*
+* @author  Ali Mugamai
+* @version 1.0
+* @since   2021-09-24
+*/
+
 import java.util.Scanner;
+import java.util.Random;
 
-public class ACEYDU {
-	public static void main(String[] args) {
-		Scanner scanner = new Scanner(System.in);
-		Random random = new Random();
-		int totalMoney = 100;
-		int betAmount, card1, card2, nextCard;
-		String playAgain;
+public class NumberGuessingGame {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        Random random = new Random();
+        int limit = 100;
+        int numOfGuesses = 7;
 
-		System.out.println("ACEY-DUCEY IS PLAYED IN THE FOLLOWING MANNER:");
-		System.out.println("THE DEALER (COMPUTER) DEALS TWO CARDS FACE UP.");
-		System.out.println("YOU HAVE THE OPTION TO BET OR NOT TO BET DEPENDING");
-		System.out.println("ON WHETHER OR NOT YOU FEEL THE NEXT CARD WILL HAVE");
-		System.out.println("A VALUE BETWEEN THE FIRST TWO.");
-		System.out.println("IF YOU DO NOT WANT TO BET, INPUT A 0.");
-		System.out.println();
+        while (true) {
+            System.out.println("STARS - A NUMBER GUESSING GAME");
+            System.out.println("Do you want instructions (YES or NO)?");
+            String UserInputInstructions = scanner.nextLine().toUpperCase();
 
-		while (true) {
-			System.out.println("YOU NOW HAVE " + totalMoney + " DOLLARS.");
-			System.out.println();
-			System.out.println("HERE ARE YOUR NEXT TWO CARDS...");
+            if ( UserInputInstructions.equals("YES")) {
+                printInstructions(limit, maxGuesses);
+            }
 
-			card1 = random.nextInt(13) + 2;
-			card2 = random.nextInt(13) + 2;
+            int targetNumber = random.nextInt(limit) + 1;
+            System.out.println("OK, I am thinking of a number from 1 to " + limit + ". Start guessing.");
 
-			while (card1 >= card2) {
-				card1 = random.nextInt(13) + 2;
-				card2 = random.nextInt(13) + 2;
-			}
+            boolean guessedCorrectly = false;
 
-			printCard(card1);
-			printCard(card2);
+            for (int guessCount = 1; guessCount <= maxGuesses; guessCount++) {
+                System.out.print("Your guess: ");
+                int guess = scanner.nextInt();
+                scanner.nextLine();
 
-			System.out.println();
-			System.out.print("WHAT IS YOUR BET: ");
-			betAmount = scanner.nextInt();
+                if (guess == targetNumber) {
+                    guessedCorrectly = true;
+                    break;
+                }
 
-			if (betAmount == 0) {
-				System.out.println("CHICKEN!!");
-				System.out.println();
-				continue;
-			}
+                int difference = Math.abs(targetNumber - guess);
+                printStars(difference);
+            }
 
-			if (betAmount > totalMoney) {
-				System.out.println("SORRY, MY FRIEND, BUT YOU BET TOO MUCH");
-				System.out.println("YOU HAVE ONLY " + totalMoney + " DOLLARS TO BET.");
-				continue;
-			}
+            if (!guessedCorrectly) {
+                System.out.println("SORRY, THAT WAS " + maxGuesses + " GUESSES. NUMBER WAS " + targetNumber);
+            } else {
+                System.out.println("!!!");
+                System.out.println("YOU GOT IT IN " + maxGuesses + " GUESSES! LET'S PLAY AGAIN...");
+            }
 
-			nextCard = random.nextInt(13) + 2;
-			printCard(nextCard);
+            System.out.println();
+        }
+    }
 
-			if (nextCard > card1 && nextCard < card2) {
-				System.out.println("YOU WIN!!!");
-				totalMoney += betAmount;
-			} else {
-				System.out.println("SORRY, YOU LOSE.");
-				totalMoney -= betAmount;
-			}
+    private static void printInstructions(int limit, int maxGuesses) {
+        System.out.println("I am thinking of a whole number from 1 to " + limit);
+        System.out.println("Try to guess my number. After you guess, I will type one or more stars (*).");
+        System.out.println("The more stars I type, the closer you are to my number.");
+        System.out.println("One star (*), means far away. Seven stars (******* ) means really close!");
+        System.out.println("You get " + maxGuesses + " guesses.");
+    }
 
-			if (totalMoney <= 0) {
-				System.out.println();
-				System.out.println("SORRY, FRIEND, BUT YOU BLEW YOUR WAD.");
-				System.out.print("TRY AGAIN (YES OR NO): ");
-				playAgain = scanner.next();
-				if (playAgain.equalsIgnoreCase("YES")) {
-					totalMoney = 100;
-				} else {
-					System.out.println();
-					System.out.println("O. K. HOPE YOU HAD FUN!!");
-					break;
-				}
-			}
-		}
+    private static void printStars(int difference) {
+        int stars = 0;
+        if (difference > 64) stars = 1;
+        else if (difference > 32) stars = 2;
+        else if (difference > 16) stars = 3;
+        else if (difference > 8) stars = 4;
+        else if (difference > 4) stars = 5;
+        else if (difference > 2) stars = 6;
+        else if (difference == 1) stars = 7;
 
-		scanner.close();
-	}
-
-	private static void printCard(int card) {
-		switch (card) {
-			case 11:
-				System.out.println("JACK");
-				break;
-			case 12:
-				System.out.println("QUEEN");
-				break;
-			case 13:
-				System.out.println("KING");
-				break;
-			case 14:
-				System.out.println("ACE");
-				break;
-			default:
-				System.out.println(card);
-				break;
-		}
-	}
+        for (int guess = 0; guess < stars; i++) {
+            System.out.print("*");
+        }
+        System.out.println();
+    }
 }

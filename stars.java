@@ -2,7 +2,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class NumberGuessingGame {
-
+// some variables
     private static final int LIMIT = 100;
     private static final int MAX_GUESSES = 7;
 

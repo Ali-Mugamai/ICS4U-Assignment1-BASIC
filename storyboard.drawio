@@ -1,0 +1,25 @@
+<mxfile host="65bd71144e">
+    <diagram id="QX1zo9v58SIVmSJXH7CT" name="Page-1">
+        <mxGraphModel dx="535" dy="382" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="90" y="170" width="570" height="460" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="STARS - A NUMBER GUESSING GAME" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="100" y="170" width="240" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="DO YOU WANT INSTRUCTIONS (1=YES 0=NO)&quot;? 1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="90" y="200" width="290" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="&lt;div&gt;I AM THINKING OF A WHOLE NUMBER FROM 1 TO 111&lt;/div&gt;&lt;div&gt;TRY TO GUESS MY NUMBER. AFTER YOU GUESS, I WILL TYPE ONE OR MORE 5TARS (*). THE MORE&lt;/div&gt;&lt;div&gt;STARS I TYPE, THE CLOSER, YOU ARE TO MY NUM8ER.&lt;/div&gt;&lt;div&gt;ONE STAR (*) t MEANS FAR AWAY SEYEN STARS (*******)&lt;/div&gt;&lt;div&gt;MEANS REALLY CLOSE! YOU GET 7 GUESSES&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="90" y="230" width="440" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="&lt;div&gt;OK, I AM THINKING OF A NUMBER. START GUESSING&lt;/div&gt;&lt;div&gt;YOUR GUESS? 50&lt;/div&gt;&lt;div&gt;***&lt;/div&gt;&lt;div&gt;YOUR GUESS? 75&lt;/div&gt;&lt;div&gt;*****&lt;/div&gt;&lt;div&gt;YOUR GUESS? 32&lt;/div&gt;&lt;div&gt;****&lt;/div&gt;&lt;div&gt;YOUR GUESS? 67&lt;/div&gt;&lt;div&gt;*****&lt;/div&gt;&lt;div&gt;YOU&quot;, GUESS? 68&lt;/div&gt;&lt;div&gt;*******&lt;/div&gt;&lt;div&gt;YOUR GUESS? 69&lt;/div&gt;&lt;div&gt;&quot;'*************************************************!!&lt;/div&gt;&lt;div&gt;YOU GOT IT IN 6 GUESSES!!!!&lt;br&gt;LETS PLAY AGAIN....&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="90" y="280" width="500" height="330" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

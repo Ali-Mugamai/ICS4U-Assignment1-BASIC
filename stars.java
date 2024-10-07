@@ -41,7 +41,7 @@ public class NumberGuessingGame {
                 }
 
                 int difference = Math.abs(targetNumber - guess);
-                printStars(difference);
+                printIn(difference);
             }
 
             if (!guessedCorrectly) {
